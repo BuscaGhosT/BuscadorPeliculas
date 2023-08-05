@@ -1,0 +1,9 @@
+<app-searcher [fromHome] = "fromHome"></app-searcher>
+<div class="p-3 d-flex justify-content-center align-items-center" *ngIf="errorMessage.length>0"><h2 class="text-danger">{{errorMessage}}</h2></div>
+<div class="container text-center">
+    <h2> Estrenos Recientes </h2>
+    <!-- RECENT MOVIES -->
+    <div class="p-3">
+        <app-card [movies] = "recents"></app-card>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+
+<form (ngSubmit)="submit($event)" (keydown.enter)="submit($event)" class="form-inline m-3 d-flex justify-content-center">
+    <input type="search" class="form-control mr-2" placeholder="Buscar Película" name="textoBuscar" [(ngModel)]="textoBuscar">
+    <button type="submit" class="btn btn-outline-success" id="searchButton"> Buscar </button>
+</form>
+
+<div class="p-3 d-flex justify-content-center align-items-center" *ngIf="errorMessage.length>0"><h2 class="text-danger">{{errorMessage}}</h2></div>
+<div class="p-3 container text-center">
+    <div class="p-3 d-flex justify-content-center align-items-center" *ngIf="(moviesFilter.length === 0 && !fromHome)"><h2 class="text-info">No hay películas que coincidan con el filtro seleccionado</h2></div>
+    <h2 *ngIf ="moviesFilter.length !== 0 && !fromHome" class="p-3"> Resultados Filtro </h2>
+    <div><app-card [movies] = "moviesFilter"></app-card></div>
+</div>
+

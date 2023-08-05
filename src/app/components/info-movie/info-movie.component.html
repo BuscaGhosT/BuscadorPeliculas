@@ -1,0 +1,58 @@
+
+
+<button id="infoButton" class="btn m-4" (click) = "regresar()" title="Info"> Volver </button> 
+<div class="p-3 d-flex justify-content-center align-items-center" *ngIf="errorMessage.length>0"><h2 class="text-danger">{{errorMessage}}</h2></div>
+<div *ngIf="available" class="row pt-4 ml-2 mb-4">
+
+    <div class="col-md-4 ml-4">
+      <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path }}" class="card-img-top shadow" >
+      <img *ngIf="!movie.poster_path" src="../../../assets/images/noimage.jpg" class="card-img-top shadow" alt="No image alt">
+    </div>
+
+    <div class="col-md-7 border shadow p-4">
+
+        <label class="font-weight-bold"> Título Original </label>
+        <div class ="mb-3">
+            <p *ngIf="movie.original_title" >{{movie.original_title}}</p>
+            <p *ngIf="!movie.original_title" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Fecha de estreno </label>
+        <div class ="mb-3">
+            <p *ngIf="movie.release_date" >{{movie.release_date}}</p>
+            <p *ngIf="!movie.release_date" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Descripcion </label>
+        <div class="mb-3 text-justify" >
+           <p *ngIf="movie.overview" >{{movie.overview}}</p>
+           <p *ngIf="!movie.overview" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Lenguaje Original </label>
+        <div class="mb-3" >
+            <p *ngIf="movie.original_language" >{{movie.original_language}}</p>
+            <p *ngIf="!movie.original_language" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Valoración </label>
+        <div class="mb-3" >
+           <p *ngIf="movie.vote_average !== 0" >{{movie.vote_average}}</p>
+           <p *ngIf="movie.vote_average === 0" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Presupuesto </label>
+        <div class="mb-3" >
+         <p *ngIf="movie.budget !== 0" >{{movie.budget}} $</p>
+         <p *ngIf="movie.budget === 0" >--</p>
+        </div>
+
+        <label class="font-weight-bold"> Recaudación </label>
+        <div class="mb-3" >
+         <p *ngIf="movie.revenue !== 0" >{{movie.revenue}} $</p>
+         <p *ngIf="movie.revenue === 0" >--</p>
+        </div>
+                
+    </div>
+</div>
+

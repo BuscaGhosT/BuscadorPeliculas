@@ -1,0 +1,22 @@
+.card-img-top{
+    max-height: 45rem;
+}
+
+#infoButton{
+    background-color: #eb5b5b !important;
+    color : white !important
+    
+}
+
+#infoButton:hover{
+    border: 1px solid #eb5b5b !important;
+    background:white !important;
+    color : #eb5b5b  !important
+}
+
+#infoButton:focus{
+    border: 1px solid #eb5b5b !important;
+    background:white !important;
+    color : #eb5b5b  !important;
+    box-shadow:  0 0 0.2rem rgba(185, 16, 39, 0.5);
+}   

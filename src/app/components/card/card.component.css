@@ -1,0 +1,37 @@
+.card:hover{
+    box-shadow: 8px 8px 8px blue;
+    transform:scale(1.1);
+    z-index: 101;
+}
+.card-img-top{
+    max-height: 25rem;
+    cursor: pointer;
+}
+
+.card{
+  transition:.3s;
+  margin-bottom: 3rem;
+}
+
+.card-title{
+    font-size: 1rem !important;
+}
+
+#infoButton{
+    background-color: #eb5b5b !important;
+    color : white !important
+    
+}
+
+#infoButton:hover{
+    border: 1px solid #eb5b5b !important;
+    background:white !important;
+    color : #eb5b5b  !important
+}
+
+#infoButton:focus{
+    border: 1px solid #eb5b5b !important;
+    background:white !important;
+    color : #eb5b5b  !important;
+    box-shadow:  0 0 0.2rem rgba(185, 16, 39, 0.5);
+}   

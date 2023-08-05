@@ -1,0 +1,12 @@
+#mainLink{
+    text-transform: uppercase;
+    color: white;
+}
+
+#mainDiv{
+    top : 0;
+    z-index: 100;
+    position : sticky;
+    background: #393c48;
+    background:linear-gradient(180deg, rgba(57,60,72,0.92) 0%, rgb(57 69 72 / 64%) 65%, rgb(57 69 72 / 38%) 100%)
+}

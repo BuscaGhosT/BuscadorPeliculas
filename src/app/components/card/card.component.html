@@ -1,0 +1,16 @@
+
+<div class="row">
+
+    <div class="card-columns">
+      <div  *ngFor="let movie of movies" class="card shadow-lg">
+        <div>
+          <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path }}" class="card-img-top" [routerLink]="['/pelicula', movie.id]">
+          <img *ngIf="!movie.poster_path" src="../../../assets/images/noimage.jpg" class="card-img-top" [routerLink]="['/pelicula', movie.id]" alt="No image alt">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <button title="Info" id="infoButton" class="btn btn-block" [routerLink]="['/pelicula', movie.id]">Info</button>
+        </div>
+      </div>
+    </div>
+
