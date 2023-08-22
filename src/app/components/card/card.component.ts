@@ -11,6 +11,6 @@ export class CardComponent implements OnInit{
   // Property from parent Component
   @Input() movies : ResponseAbreviateInfoMovie[] = []
 
-  ngOnInit() {}
+  ngOnInit() : void {}
 
 }

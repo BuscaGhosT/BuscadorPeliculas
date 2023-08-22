@@ -8,7 +8,8 @@
           <img *ngIf="!movie.poster_path" src="../../../assets/images/noimage.jpg" class="card-img-top" [routerLink]="['/pelicula', movie.id]" alt="No image alt">
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{movie.title}}</h5>
+          <h5 *ngIf ="movie.title.length < 40" class="card-title" title="{{movie.title}}">{{movie.title}}</h5>
+          <h5 *ngIf ="movie.title.length >= 40" class="card-title" title="{{movie.title}}">{{movie.title.substr(0,30)}}...</h5>
           <button title="Info" id="infoButton" class="btn btn-block" [routerLink]="['/pelicula', movie.id]">Info</button>
         </div>
       </div>

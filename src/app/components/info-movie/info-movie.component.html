@@ -1,6 +1,12 @@
 
 
 <button id="infoButton" class="btn m-4" (click) = "regresar()" title="Info"> Volver </button> 
+<div *ngIf="loading == true" class="d-flex justify-content-center">
+    <label class="p-2"> Cargando Información de la pelicula...</label>
+    <div class="spinner-border" role="status">
+
+    </div>
+</div>
 <div class="p-3 d-flex justify-content-center align-items-center" *ngIf="errorMessage.length>0"><h2 class="text-danger">{{errorMessage}}</h2></div>
 <div *ngIf="available" class="row pt-4 ml-2 mb-4">
 

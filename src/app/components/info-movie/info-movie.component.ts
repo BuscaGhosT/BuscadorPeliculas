@@ -14,6 +14,7 @@ export class InfoMovieComponent implements OnInit {
   id : string = ""
   errorMessage : string = ""
   movie!: ResponseInfoMovie;
+  loading : boolean = false;
   available : boolean = false
 
   constructor ( private mvS : MovieApiService, private route:ActivatedRoute , private location: Location){
@@ -27,11 +28,11 @@ export class InfoMovieComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() : void {}
 
 
-   searchMovie(){
-
+  searchMovie() : void{
+    this.loading = true
     this.mvS.getInfoPelicula(this.id).subscribe({
       
       next: (resp)=>{
@@ -52,20 +53,21 @@ export class InfoMovieComponent implements OnInit {
 
         }
 
-        this.available = true
+        this.available = true 
+        this.loading = false
       },
       
         error : (error) => {                           
 
           this.errorMessage = "No se pudo obtener la información de dicha película";
-      
+          this.loading = false
       }
       
     });
 
   }
 
-  regresar (){
+  regresar () : void {
     this.location.back(); 
   }
 

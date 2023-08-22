@@ -10,6 +10,7 @@
 
 #searchButton:focus{
     border: 1px solid #eb5b5b !important;
-    color: white !important;
+    color: #eb5b5b !important;
+    background-color: white !important;
     box-shadow:  0 0 0.2rem rgba(185, 16, 39, 0.5);
-}   
+} 

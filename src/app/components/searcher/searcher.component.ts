@@ -14,6 +14,7 @@ export class SearcherComponent implements OnInit {
   textoBuscar : string = ""
   moviesFilter : any[] = []
   errorMessage : string = ""
+  loading : boolean = false;
   @Input() fromHome : boolean = false
 
 
@@ -28,11 +29,11 @@ export class SearcherComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() : void {}
 
 
   // Busqueda desde el formulario
-  submit($event : Event){
+  submit($event : Event) : void{
     
     $event.preventDefault()
 
@@ -42,23 +43,32 @@ export class SearcherComponent implements OnInit {
 
   // Búsqueda por ruta
   search(){
-      
-    console.log("Searching...")
-    this.mvS.getPeliculasFiltradas(this.textoBuscar).subscribe({
 
+    this.loading = true
+    //setInterval(this.prueba,5000)
+      
+    this.mvS.getPeliculasFiltradas(this.textoBuscar).subscribe({
+      
       next: (resp)=>{
 
         const {results} = resp as ResponseMovies
 
-        this.moviesFilter=results;
+        this.moviesFilter = results;
+
+        this.loading = false;
 
       },
       error : (error) => {                           
 
         this.errorMessage = "Se produjo un error al obtener las películas";
-       
+
+        this.loading = false;
+
       }
+
+     
     })
+
 
   }
 }

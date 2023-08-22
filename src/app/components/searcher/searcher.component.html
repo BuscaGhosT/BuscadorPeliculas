@@ -5,10 +5,15 @@
     <button type="submit" class="btn btn-outline-success" id="searchButton"> Buscar </button>
 </form>
 
+<div *ngIf="loading == true" class="d-flex justify-content-center">
+    <label class="p-2"> Cargando películas...</label>
+    <div class="spinner-border" role="status">
+
+    </div>
+</div>
 <div class="p-3 d-flex justify-content-center align-items-center" *ngIf="errorMessage.length>0"><h2 class="text-danger">{{errorMessage}}</h2></div>
 <div class="p-3 container text-center">
-    <div class="p-3 d-flex justify-content-center align-items-center" *ngIf="(moviesFilter.length === 0 && !fromHome)"><h2 class="text-info">No hay películas que coincidan con el filtro seleccionado</h2></div>
+    <div class="p-3 d-flex justify-content-center align-items-center" *ngIf="(moviesFilter.length === 0 && !fromHome && errorMessage.length === 0 && loading == false )"><h2 class="text-info">No hay películas que coincidan con el filtro seleccionado</h2></div>
     <h2 *ngIf ="moviesFilter.length !== 0 && !fromHome" class="p-3"> Resultados Filtro </h2>
-    <div><app-card [movies] = "moviesFilter"></app-card></div>
+    <div><app-card [movies] = "moviesFilter"></app-card></div>    
 </div>
-
